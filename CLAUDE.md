@@ -11,6 +11,13 @@ Migrated from GoDaddy Websites+Marketing in August 2026.
 - `assets/css/style.css` — all styling; fonts are Lusitana (headings) + Lato (body) via Google Fonts
 - `CNAME` — custom domain; do not delete
 
+## Brand notes (from Patrick's designer)
+- The logo font is Flama Condensed (Bold and Light). Reserve it for the logo itself — do not use
+  it for site text. Site typography is a simple, non-condensed sans (Lato) so the logo owns the
+  visual hierarchy. Same guidance applies to Jajeh Financial.
+- Original logo files: https://drive.google.com/drive/folders/0Bwh1qJPtBF-Jcjh1T2NiTF9HaXc?resourcekey=0-hvT00l0A9ZhAj9L81ZgsoQ
+- Venture tiles: if a logo contains the company's full name, do not repeat the name as text below it.
+
 ## Rules
 - URL paths /529 and /tax must keep working (GitHub Pages serves 529.html at /529).
 - DNS is at GoDaddy; email is Google Workspace — never suggest changing NS/MX/TXT records.

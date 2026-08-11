@@ -1,5 +1,7 @@
 /* Jajeh Group — design system
-   Palette drawn from the sail logo: charcoal + emerald, on a warm paper white. */
+   Palette drawn from the sail logo: charcoal + emerald, on a warm paper white.
+   Typography per brand designer: logo font (Flama Condensed) is reserved for the logo itself;
+   site text uses a simple, non-condensed sans (Lato) so the logo owns the hierarchy. */
 :root {
   --ink: #26221f;
   --ink-soft: #55504b;
@@ -8,7 +10,7 @@
   --line: #e7e1d8;
   --green: #17a566;
   --green-deep: #0e7a4a;
-  --serif: "Lusitana", Georgia, serif;
+  --head: "Lato", -apple-system, "Segoe UI", sans-serif;
   --sans: "Lato", -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -24,7 +26,7 @@ body {
 }
 img { max-width: 100%; height: auto; }
 
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.25; margin: 0 0 .5em; }
+h1, h2, h3 { font-family: var(--head); font-weight: 700; line-height: 1.25; margin: 0 0 .5em; }
 h1 { font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: .04em; }
 h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); }
 p  { margin: 0 0 1.2em; }
@@ -37,7 +39,7 @@ a  { color: var(--green-deep); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: .9rem; padding-bottom: .9rem; }
 .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--ink); }
 .brand img { width: 44px; height: 44px; border-radius: 50%; }
-.brand span { font-family: var(--serif); font-size: 1.25rem; letter-spacing: .12em; }
+.brand span { font-family: var(--head); font-weight: 700; font-size: 1.15rem; letter-spacing: .14em; }
 .site-nav a { margin-left: 1.4rem; text-decoration: none; color: var(--ink-soft); font-size: .95rem; letter-spacing: .05em; text-transform: uppercase; }
 .site-nav a:hover { color: var(--green-deep); }
 
@@ -58,7 +60,8 @@ a  { color: var(--green-deep); }
 /* Ventures */
 .ventures { padding: 4rem 0 4.5rem; text-align: center; }
 .ventures .lede { color: var(--ink-soft); max-width: 38em; margin: 0 auto 2.5rem; }
-.venture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.25rem; }
+/* Flex (not grid) so a partial last row centers under the full rows */
+.venture-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
 .venture {
   background: var(--paper-raised);
   border: 1px solid var(--line);
@@ -66,14 +69,16 @@ a  { color: var(--green-deep); }
   padding: 1.5rem 1.25rem;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
   min-height: 190px;
+  flex: 0 1 245px;
   text-decoration: none; color: var(--ink);
   transition: transform .15s ease, box-shadow .15s ease;
 }
+@media (max-width: 560px) { .venture { flex-basis: 100%; } }
 a.venture:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(38, 34, 31, .1); }
 .venture img { max-height: 92px; width: auto; max-width: 85%; object-fit: contain; }
-.venture .wordmark { font-family: var(--serif); font-size: 1.7rem; color: var(--ink); line-height: 92px; }
 .venture .name { font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
 a.venture .name { color: var(--green-deep); }
+.venture .sub { font-size: .85rem; color: var(--ink-soft); margin-top: -0.7rem; }
 
 /* Give */
 .give { background: var(--ink); color: #f2efe9; text-align: center; padding: 3.5rem 1.25rem; }
@@ -92,7 +97,7 @@ a.venture .name { color: var(--green-deep); }
 .kid { text-decoration: none; color: var(--ink); background: var(--paper-raised); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform .15s ease, box-shadow .15s ease; }
 .kid:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(38, 34, 31, .12); }
 .kid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
-.kid .name { display: block; text-align: center; font-family: var(--serif); font-size: 1.2rem; padding: .9rem 0; color: var(--green-deep); }
+.kid .name { display: block; text-align: center; font-family: var(--head); font-size: 1.2rem; padding: .9rem 0; color: var(--green-deep); }
 
 /* Embed (tax organizer) */
 .embed { padding: 1.5rem 0 4rem; }
