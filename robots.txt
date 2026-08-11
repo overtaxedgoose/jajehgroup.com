@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jajehgroup.com/sitemap.xml
